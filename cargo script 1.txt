@@ -1,0 +1,49 @@
+comment "copy inventory to clipboard"; 
+_obj = _this select 1; 
+_items = str getItemCargo _obj; 
+_backpacks = str getBackpackCargo _obj; 
+_magazines = str getMagazineCargo _obj; 
+_weapons = str getWeaponCargo _obj; 
+copyToClipboard ("_obj = _this select 1;
+	_items = " + _items +  ";
+	_backpacks = " + _backpacks + ";
+	_magazines = " + _magazines + ";
+	_weapons = "+ _weapons + ";
+	
+_object = _Items select 0;
+_value = _Items select 1;
+_count = count _object;
+
+for [{_i =0},{_i < _count},{_i=_i+1}] do
+{
+     _obj addItemCargo [_object select _i, _value select _i];
+ }; 
+
+_object = _backpacks select 0;
+_value = _backpacks select 1;
+_count = count _object;
+
+for [{_i =0},{_i < _count},{_i=_i+1}] do
+{
+     _obj addItemCargo [_object select _i, _value select _i];
+ }; 
+
+_object = _magazines select 0;
+_value = _magazines select 1;
+_count = count _object;
+
+for [{_i =0},{_i < _count},{_i=_i+1}] do
+{
+     _obj addItemCargo [_object select _i, _value select _i];
+ }; 
+
+_object = _weapons select 0;
+_value = _weapons select 1;
+_count = count _object;
+
+for [{_i =0},{_i < _count},{_i=_i+1}] do
+{
+     _obj addItemCargo [_object select _i, _value select _i];
+ };
+"); 
+ 
